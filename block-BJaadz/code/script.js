@@ -46,9 +46,13 @@ heading.style.fontSize = "3rem";
 
 // Change the border of hr with class 'image' to `2px solid purple`.
 
-let hrsImage = document.querySelectorAll(".image");
-let allHrsImage = Array.from(hrsImage);
-allHrsImage.forEach(element => element.style.border = "2px solid purple");
+// let hrsImage = document.querySelectorAll(".image");
+// let allHrsImage = Array.from(hrsImage);
+// allHrsImage.forEach(element => element.style.border = "2px solid purple");
+
+document.querySelectorAll("hr.image").forEach( element => {
+   element.style.border = "2px solid purple";
+  });
 
 // Hide the box number 17 (last box).
 
@@ -71,14 +75,16 @@ console.log(para);
 
 // Remove all the elements from box 1
 
-let boxOneElements = document.querySelector(".one").children;
-let allBoxOneElements = Array.from(boxOneElements);
-allBoxOneElements.forEach(element => element.remove());
+// let boxOneElements = document.querySelector(".one").children;
+// let allBoxOneElements = Array.from(boxOneElements);
+// allBoxOneElements.forEach(element => element.remove());
 
+let box1 = document.querySelector(".one");
+box1.innerHTML = "1";
 
 // Replace all the elements inside box 1 with the para (you created above)
 
-document.querySelector(".one").append(para);
+box1.append(para);
 
 /* Walking the DOM
 Do the following after selecting box 16 and storing in variable named box16
@@ -150,13 +156,13 @@ document.querySelector(".six").style.color = "black";
 
 // Change the font size of the para inside box 1 to 0.8rem.
 
-document.querySelector(".one").children[0].style.fontSize = "0.8rem";
+// document.querySelector(".one").children[0].style.fontSize = "0.8rem";
+para.style.fontSize = "0.8rem";
 
 // Change the background of all the alternate boxes (1, 3, 5, ....) to aliceblue
 
-let allBox = document.querySelectorAll(".box");
-let allBoxArray = Array.from(allBox);
-allBoxArray.forEach((element, i) => {
+let allBoxes = document.querySelectorAll(".box");
+allBoxes.forEach((element, i) => {
   if(i % 2 === 0) {
     element.style.backgroundColor = "aliceblue"; 
   }
@@ -218,11 +224,13 @@ let boxSeven = document.querySelector(".seven");
 
 // Remove all the elements form box seven
 
-let boxSevenElements = boxSeven.children;
-let allBoxSevenElements = Array.from(boxSevenElements);
-allBoxSevenElements.forEach(element => {
-  element.remove();
-});
+// let boxSevenElements = boxSeven.children;
+// let allBoxSevenElements = Array.from(boxSevenElements);
+// allBoxSevenElements.forEach(element => {
+//   element.remove();
+// });
+
+boxSeven.innerHTML = "";
 
 // Append the imgElm to the box no 7
 
