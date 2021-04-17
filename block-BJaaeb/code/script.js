@@ -49,6 +49,7 @@ function createList(arr) {
   return ul;
 };
 
+
 // TEST
 createList(['ALABAMA', 'ALASKA', 'HAWAII', 'KENTUCKY']);
 createList(['Afghanistan', 'Antarctica', 'Congo', 'Estonia']);
@@ -84,7 +85,6 @@ function createTodoList(arr) {
     li.append(p, input, span);
     ul.append(li); 
   });
-  document.body.appendChild(ul);
   return ul;
 };
 
