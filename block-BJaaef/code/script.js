@@ -13,6 +13,7 @@ allPeople.forEach(people => {
     div.classList.add("name-pic");
     let charImg = document.createElement("img");
     charImg.src = people.image;
+    charImg.alt = people.name;
     let charName = document.createElement("h4");
     charName.innerText = people.name;
     div.append(charImg, charName);
