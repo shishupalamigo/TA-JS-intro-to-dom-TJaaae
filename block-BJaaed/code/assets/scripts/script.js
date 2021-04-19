@@ -118,12 +118,9 @@ let allBooks =   {
  };
 
 
-let books = allBooks.books;
+let rootElement = document.querySelector("section");
 
-
-let container = document.querySelector("section");
-
-books.forEach(element => {
+allBooks.books.forEach(element => {
   let ul = document.createElement("ul");
 
   ul.classList.add("flex-30", "padding", "book-info", "margin");
@@ -137,6 +134,7 @@ books.forEach(element => {
 
   let img = document.createElement("img");
   img.src = element.image;
+  img.alt = element.title;
   img.classList.add("width-full");
   
   imgContainer.append(img);
@@ -156,10 +154,11 @@ books.forEach(element => {
 
   let a = document.createElement("a");
   a.innerText = "Buy Now";
+  a.href = element.website;
   a.classList.add("btn", "secondry-btn");
-  a.style.width ="30%";
+  a.style.width ="40%";
 
   li.append(imgContainer, h2, subTitle, authorName, a);
   ul.append(li);
-  container.append(ul);
+  rootElement.append(ul);
 });
