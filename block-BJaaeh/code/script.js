@@ -15,7 +15,7 @@ function setDate() {
     secondsHand.style.transform = `rotate(${secondsDegree}deg)`;
 
     const minute = now.getMinutes();
-    minutesDegree = ((minute / 60) * 360) + 90;
+    minutesDegree = (((minute / 60) * 360) + 90) + (seconds * (6/60));
     minHand.style.transform = `rotate(${minutesDegree}deg)`;
 
     const hour = now.getHours();
@@ -25,7 +25,7 @@ function setDate() {
 
     const color = randomColorGenrator();
     clock.style.borderColor = color;
-    digits.forEach (digit => digit.style.color = color);
+    // digits.forEach (digit => digit.style.color = color);
 
 }
 
